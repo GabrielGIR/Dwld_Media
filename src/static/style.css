@@ -1,0 +1,101 @@
+:root{
+    --acent-color:#86cfff;
+    --text-color: #F9F9F9;
+}
+html{
+    color: var(--text-color);
+}
+body {
+  background-image: url("images/Premium Solid Charcoal Gray Fabric (per yard).jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Para oscurecer la imagen */
+  background-color: rgba(0, 0, 0, 0.5); /* Un color negro con opacidad */
+  background-blend-mode: darken; /* Mezcla el color negro con la imagen */
+}
+
+h1 {
+  color: #5B99C2;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 85px;
+  margin-bottom: 25px;
+  font-family: poppins;
+  color: var(--acent-color);
+  text-shadow: 0px 0px 1px rgb(255, 255, 255);
+}
+.content {
+  margin-top: 14%;
+  color: #fff;
+  max-width: 620px;
+  margin-left: 5%;
+}
+
+.content form {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 30px;
+  background: #fff;
+  position: relative;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+form::after,
+form::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #1A4870,
+    #F9DBBA,
+    #1F316F
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+form::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+}
+.content form input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.content form button {
+  font-size: 15px;
+  padding: 10px 30px;
+  background: #86cfff;
+  border-radius: 55px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.content form img {
+    width: 10%;
+    align-items: center;
+}
